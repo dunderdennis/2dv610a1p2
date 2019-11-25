@@ -1,6 +1,6 @@
 <?php
 
-class Test extends PHPUnit\Framework\TestCase
+class IndexTest extends PHPUnit\Framework\TestCase
 {
     public function testOne () {
         $this->assertTrue(false);
