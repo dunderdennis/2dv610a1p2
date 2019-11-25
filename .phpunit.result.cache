@@ -1,1 +1,1 @@
-C:37:"PHPUnit\Runner\DefaultTestResultCache":98:{a:2:{s:7:"defects";a:1:{s:13:"Test::testOne";i:3;}s:5:"times";a:1:{s:13:"Test::testOne";d:0.007;}}}
+C:37:"PHPUnit\Runner\DefaultTestResultCache":162:{a:2:{s:7:"defects";a:2:{s:13:"Test::testOne";i:3;s:18:"IndexTest::testOne";i:3;}s:5:"times";a:2:{s:13:"Test::testOne";d:0.007;s:18:"IndexTest::testOne";d:0.006;}}}
