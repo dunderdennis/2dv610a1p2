@@ -9,8 +9,6 @@ class GameView
 
     public function generateWelcomeMessage()
     {
-        $str = "Welcome to this blackjack game!";
-
-        return $str;
+        return "Welcome to this blackjack game!";
     }
 }
