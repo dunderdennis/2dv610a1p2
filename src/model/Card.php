@@ -11,13 +11,13 @@ class Card
     {
         if ($cardIndex <= 13) {
             $this->color = "hearts";
-        } else if ($cardIndex <= 26) {
+        } /*else if ($cardIndex <= 26) {
             $this->color = "diamonds";
         } else if ($cardIndex <= 39) {
             $this->color = "clubs";
         } else if ($cardIndex <= 52) {
             $this->color = "spades";
-        }
+        }*/
 
         $this->gameValue = ($cardIndex % 10) + 1;
     }
