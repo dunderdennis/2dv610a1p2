@@ -15,10 +15,9 @@ class Card
             $this->color = "diamonds";
         } else if ($cardIndex <= 39) {
             $this->color = "clubs";
-        } 
-        /*else if ($cardIndex <= 52) {
+        } else if ($cardIndex <= 52) {
             $this->color = "spades";
-        }*/
+        }
 
         $this->gameValue = ($cardIndex % 10) + 1;
     }
