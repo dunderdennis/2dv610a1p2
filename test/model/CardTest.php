@@ -3,8 +3,7 @@
 class CardTest extends PHPUnit\Framework\TestCase
 {
     /** @test 
-     *  @dataProvider validCardIndexesProvider
-     */
+     *  @dataProvider validCardIndexesProvider */
     public function shouldHaveValidGameValue($cardIndex)
     {
         $sut = new \model\Card($cardIndex);
@@ -14,8 +13,7 @@ class CardTest extends PHPUnit\Framework\TestCase
     }
 
     /** @test 
-     *  @dataProvider CardIndexesWithHeartsColorProvider
-     */
+     *  @dataProvider CardIndexesWithHeartsColorProvider */
     public function shouldHaveColorHearts($cardIndex)
     {
         $sut = new \model\Card($cardIndex);
@@ -26,8 +24,7 @@ class CardTest extends PHPUnit\Framework\TestCase
     }
 
     /** @test 
-     *  @dataProvider CardIndexesWithDiamondsColorProvider
-     */
+     *  @dataProvider CardIndexesWithDiamondsColorProvider */
     public function shouldHaveColorDiamonds($cardIndex)
     {
         $sut = new \model\Card($cardIndex);
@@ -38,8 +35,7 @@ class CardTest extends PHPUnit\Framework\TestCase
     }
 
     /** @test 
-     *  @dataProvider CardIndexesWithClubsColorProvider
-     */
+     *  @dataProvider CardIndexesWithClubsColorProvider */
     public function shouldHaveColorClubs($cardIndex)
     {
         $sut = new \model\Card($cardIndex);
@@ -50,8 +46,7 @@ class CardTest extends PHPUnit\Framework\TestCase
     }
 
     /** @test 
-     *  @dataProvider CardIndexesWithSpadesColorProvider
-     */
+     *  @dataProvider CardIndexesWithSpadesColorProvider */
     public function shouldHaveColorSpades($cardIndex)
     {
         $sut = new \model\Card($cardIndex);
@@ -61,7 +56,20 @@ class CardTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($actual, $expected, 'Card indexes 40-52 should have color: spades.');
     }
 
+    /** @test 
+     *  @dataProvider CardIndexesWithDressedCardsProvider */
+    public function shouldHaveGameValue10OnDressedCards($cardIndex)
+    {
+        $sut = new \model\Card($cardIndex);
+        $actual = $sut->getGameValue();
+        $expected = 10;
 
+        $this->assertEquals($actual, $expected, 'Dressed cards should have game value: 10.');
+    }
+
+
+
+    // Data providers
 
     public function validCardIndexesProvider()
     {
@@ -115,6 +123,12 @@ class CardTest extends PHPUnit\Framework\TestCase
             array_push($cardIndex, $i);
             array_push($cardIndexes, $cardIndex);
         }
+        return $cardIndexes;
+    }
+
+    public function CardIndexesWithDressedCardsProvider()
+    {
+        $cardIndexes = array([11], [12], [13], [24], [25], [26], [37], [38], [39], [50], [51], [52]);
         return $cardIndexes;
     }
 }
