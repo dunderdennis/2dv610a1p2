@@ -10,6 +10,6 @@ require_once "model/Card.php";
 require_once "view/GameView.php";
 
 
-$gameView = new GameView();
+$gameView = new \view\GameView();
 
 echo $gameView->generateWelcomeMessage();

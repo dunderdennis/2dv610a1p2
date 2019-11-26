@@ -26,7 +26,7 @@ class Card
 
         $reducedCardIndex = $cardIndex % 13;
 
-        if ($reducedCardIndex > 10 && $reducedCardIndex <= 13 || $reducedCardIndex == 0) {
+        if ($reducedCardIndex > 10 && $reducedCardIndex <= 13 || $cardIndex % 13 == 0) {
             $this->gameValue = 10;
         } else {
             $this->gameValue = $cardIndex % 13;

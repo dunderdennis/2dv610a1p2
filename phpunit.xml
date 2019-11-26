@@ -12,4 +12,13 @@
         <env name="SESSION_DRIVER" value="array"/>
         <env name="QUEUE_DRIVER" value="sync"/>
     </php>
+    <logging>
+        <log type="coverage-html" target="./mainreport"
+         lowUpperBound="50" highLowerBound="80" />
+    </logging>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./src/</directory>
+        </whitelist>
+    </filter>
 </phpunit>
