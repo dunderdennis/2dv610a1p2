@@ -2,6 +2,11 @@
 
 namespace model;
 
+const HEARTS = 'hearts';
+const DIAMONDS = 'diamonds';
+const CLUBS = 'clubs';
+const SPADES = 'spades';
+
 class Card
 {
     private $gameValue;
@@ -10,13 +15,13 @@ class Card
     public function __construct(int $cardIndex)
     {
         if ($cardIndex <= 13) {
-            $this->color = "hearts";
+            $this->color = HEARTS;
         } else if ($cardIndex <= 26) {
-            $this->color = "diamonds";
+            $this->color = DIAMONDS;
         } else if ($cardIndex <= 39) {
-            $this->color = "clubs";
+            $this->color = CLUBS;
         } else if ($cardIndex <= 52) {
-            $this->color = "spades";
+            $this->color = SPADES;
         }
 
         $this->gameValue = ($cardIndex % 10) + 1;
