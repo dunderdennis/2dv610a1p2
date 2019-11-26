@@ -24,10 +24,12 @@ class Card
             $this->color = SPADES;
         }
 
-        if ($cardIndex % 13 > 10 && $cardIndex % 13 <= 13 || $cardIndex % 13 == 0) {
+        $reducedCardIndex = $cardIndex % 13;
+
+        if ($reducedCardIndex > 10 && $reducedCardIndex <= 13 || $reducedCardIndex == 0) {
             $this->gameValue = 10;
         } else {
-            $this->gameValue = ($cardIndex % 13);
+            $this->gameValue = $cardIndex % 13;
         }
     }
 
