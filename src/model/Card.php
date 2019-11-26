@@ -24,7 +24,11 @@ class Card
             $this->color = SPADES;
         }
 
-        $this->gameValue = ($cardIndex % 10) + 1;
+        if ($cardIndex % 13 > 10 && $cardIndex % 13 <= 13 || $cardIndex % 13 == 0) {
+            $this->gameValue = 10;
+        } else {
+            $this->gameValue = ($cardIndex % 13);
+        }
     }
 
     public function getGameValue()
