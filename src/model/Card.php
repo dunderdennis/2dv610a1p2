@@ -6,9 +6,9 @@ class Card
 {
     private $gameValue;
 
-    public function __construct()
-    { 
-        $this->gameValue = 1;
+    public function __construct(int $cardIndex)
+    {
+        $this->gameValue = ($cardIndex % 10) + 1;
     }
 
     public function getGameValue()
