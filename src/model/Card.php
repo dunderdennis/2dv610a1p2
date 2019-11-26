@@ -13,9 +13,9 @@ class Card
             $this->color = "hearts";
         } else if ($cardIndex <= 26) {
             $this->color = "diamonds";
-        } /*else if ($cardIndex <= 39) {
+        } else if ($cardIndex <= 39) {
             $this->color = "clubs";
-        } else if ($cardIndex <= 52) {
+        } /*else if ($cardIndex <= 52) {
             $this->color = "spades";
         }*/
 
