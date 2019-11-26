@@ -2,27 +2,23 @@
 
 class DeckTest extends PHPUnit\Framework\TestCase
 {
-    // private $mockCardFactory;
+    private $mockCardFactory;
 
-    // public function setUp()
-    // {
-    //     $this->mockCardFactory = $this->getMockBuilder("Card")
-    //         ->setConstructorArgs([15])
-    //         ->setMethods(["getGameValue"])
-    //         ->getMock();
-
-    //     $this->mockCard->method("getGameValue")
-    //         ->willReturn(2);
-    // }
+    public function setUp(): void
+    {
+        $this->mockCardFactory = $this->getMockBuilder("\model\CardFactory")
+            ->setMethods(["create"])
+            ->getMock();
+    }
 
     /** @test 
      *  @dataProvider cardIndexesProvider */
     public function shouldContain52Cards()
     {
-        $sut = new \model\Deck();
-        $actual = $sut->getDeck();
+        $sut = new \model\Deck($this->mockCardFactory);
+        $actual = $sut->getCards();
 
-        $this->assertTrue($actual == 52, 'A deck must contain exactly 52 cards.');
+        $this->assertTrue(count($actual) == 52, 'A deck must contain exactly 52 cards.');
     }
 
 
