@@ -37,6 +37,18 @@ class CardTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($actual, $expected, 'Card indexes 14-26 should have color: diamonds.');
     }
 
+        /** @test 
+     *  @dataProvider CardIndexesWithClubsColorProvider
+     */
+    public function shouldHaveColorClubs($cardIndex)
+    {
+        $sut = new \model\Card($cardIndex);
+        $actual = $sut->getColor();
+        $expected = 'clubs';
+
+        $this->assertEquals($actual, $expected, 'Card indexes 27-39 should have color: clubs.');
+    }
+
 
 
     public function validCardIndexesProvider()
@@ -65,6 +77,17 @@ class CardTest extends PHPUnit\Framework\TestCase
     {
         $cardIndexes = array();
         for ($i = 14; $i <= 26; $i++) {
+            $cardIndex = array();
+            array_push($cardIndex, $i);
+            array_push($cardIndexes, $cardIndex);
+        }
+        return $cardIndexes;
+    }
+
+    public function CardIndexesWithClubsColorProvider()
+    {
+        $cardIndexes = array();
+        for ($i = 27; $i <= 39; $i++) {
             $cardIndex = array();
             array_push($cardIndex, $i);
             array_push($cardIndexes, $cardIndex);
