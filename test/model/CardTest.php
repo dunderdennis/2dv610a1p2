@@ -8,6 +8,6 @@ class CardTest extends PHPUnit\Framework\TestCase
         $sut = new \model\Card();
         $actual = $sut->getGameValue();
 
-        $this->assert(1 <= $actual && $actual <= 10);
+        $this->assertTrue(1 <= $actual && $actual <= 10);
     }
 }
